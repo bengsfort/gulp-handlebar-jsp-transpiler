@@ -10,7 +10,7 @@ module.exports = [
   },
   {
     name: "{{#if test}}",
-    regex: /(\{{2}\#if ([\w.\/\=\!\-\+\%\| \'\"\>\<]*)\}{2})/,
+    regex: /(\{{2}\#if \'?\"?([\w.\/\=\!\-\+\%\| \>\<]*)\'?\"?\}{2})/,
     replace: function replaceIf(match) {
       var content = match[2];
       console.log(match[0], '->', '<c:if test="${'+content+'}">');
