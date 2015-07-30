@@ -7,6 +7,6 @@ Obviously compilers/transformers should have their output checked, and this is m
 ## Completed Transforms
 
 The current completed transforms are incredibly basic but a step in the right direction. Included in this are:
-- {{user.name}} -> ${user.name}
-- {{#if user}} {{/if}} -> <c:if test="${user}"> </c:if>
+- `{{user.name}}` -> `${user.name}`
+- `{{#if user}} {{/if}}` -> `<c:if test="${user}"> </c:if>`
 
