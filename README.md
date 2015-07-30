@@ -16,3 +16,28 @@ The current completed transforms are incredibly basic but a step in the right di
 - `{{#if user}} {{/if}}` -> `<c:if test="${user}"> </c:if>`
 - `{{#unless user.ignoreUser}} {{/unless}}` -> `<c:if test="${!user.ignoreUser}"> </c:if>`
 
+## Adding New Transforms
+Transforms are added by creating a new `file.js` within the `./gulp-utils/statements/` folder with a dev-friendly name, regex expression for matching, and replacing function. The gulp setup will automatically get and use any `.js` files within that directory.
+
+_Example file `var.js`:_
+```node
+// Utils
+var gutil = require('gulp-util'), // Only necessary for logging
+    input = gutil.colors.green, // Only necessary for logging
+    output = gutil.colors.magenta; // Only necessary for logging
+
+// Transform block
+module.exports = {
+  // Dev friendly name
+  name: "{{var}}",
+  // Regex for matching Handlebars expression
+  regex: /(\{{2}(\w+[\w.\/]*)\}{2}|\{{2} ([\w.\/]*) \}{2})/,
+  // Replace function
+  // Uses match to log the output and returns the full input with the replaced expression
+  replace: function replaceVar(match) { // Replace function, takes match and 
+    var content = match[2] || match[3];
+    gutil.log(input(match[0]), '->', output('${'+content+'}'));
+    return match['input'].replace(match[0], '${'+content+'}');
+  }
+};
+```

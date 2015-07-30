@@ -1,4 +1,4 @@
-var statements = require('./statements-hbsToJsp.js');
+var statements = require('./statements-hbsToJsp.js')();
 
 var testFile = function(file) {
   var test = file.match(/(\{{2}[ a-zA-Z0-9\#\.\/\%\-\+\|\! ]*\}{2})/);
