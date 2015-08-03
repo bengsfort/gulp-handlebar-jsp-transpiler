@@ -1,3 +1,3 @@
 node_modules
-build/html/**
-build/jsp/**
+# build/html/**
+# build/jsp/**

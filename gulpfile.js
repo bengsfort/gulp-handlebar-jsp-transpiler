@@ -2,6 +2,7 @@
 var gulp = require('gulp'),
     del = require('del'),
     hb = require('gulp-hb'),
+    gutil = require('gulp-util'),
     intercept = require('gulp-intercept'),
     rename = require('gulp-rename');
 
@@ -18,7 +19,7 @@ gulp.task('handlebars', ['clean-hbs'], function() {
 });
 
 gulp.task('clean-hbs', function(cb) {
-  console.log('Cleaning out HTML build directory.');
+  gutil.log('Cleaning out HTML build directory.');
   del('./build/html/*', cb);
 });
 
@@ -32,7 +33,7 @@ gulp.task('jsp-compile', ['clean-jsp'], function() {
 });
 
 gulp.task('clean-jsp', function(cb) {
-  console.log('Cleaning out JSP build directory.');
+  gutil.log('Cleaning out JSP build directory.');
   del('./build/jsp/*', cb);
 });
 

@@ -1,0 +1,16 @@
+{
+  "users" : [
+    {
+      "name" : "Bob Saget",
+      "link" : "#"
+    },
+    {
+      "name" : "James Bond",
+      "link" : "#"
+    },
+    {
+      "name" : "Chuck Norris",
+      "link" : "#"
+    }
+  ]
+}

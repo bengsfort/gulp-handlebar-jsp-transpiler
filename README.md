@@ -3,6 +3,8 @@ A proof of concept [Handlebars](//handlebarsjs.com) to [JSP](http://www.nooooooo
 
 Obviously compilers/transformers should have their output checked, and this is meant to streamline the development process and give a potential for another front end option that's a little easier on the eyes than JSP (and brain), and give a starting point so JSP development is more along the polishing side.
 
+![image](http://i.imgur.com/9YVxMUah.png)
+
 ## Installation
 Just `git clone` the repo and `npm install` it up.
 
@@ -15,6 +17,8 @@ The current completed transforms are incredibly basic but a step in the right di
 - `{{user.name}}` -> `${user.name}`
 - `{{#if user}} {{/if}}` -> `<c:if test="${user}"> </c:if>`
 - `{{#unless user.ignoreUser}} {{/unless}}` -> `<c:if test="${!user.ignoreUser}"> </c:if>`
+- `{{#each users}} {{/each}}` -> `<c:forEach var="user" items="${users}"> </c:forEach>`
+    + Any `{{ prop }}` within the `{{#each users}}` block will be transformed to `${user.prop}`
 
 ## Adding New Transforms
 Transforms are added by creating a new `file.js` within the `./gulp-utils/statements/` folder with a dev-friendly name, regex expression for matching, and replacing function. The gulp setup will automatically get and use any `.js` files within that directory.
