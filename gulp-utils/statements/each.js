@@ -45,7 +45,7 @@ module.exports = [
 
       // Closing block
       gutil.log(input(closingBlock), '->', output('</c:forEach>'));
-      content = content.replace(eachBlock, '</c:forEach>');
+      content = content.replace(closingBlock, '</c:forEach>');
       return content;
     }
   }
