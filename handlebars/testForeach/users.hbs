@@ -1,5 +1,7 @@
+{{! if users exist, create the user list }}
 {{#if users}}
   <ul class="user-list">
+    {{!-- iterate through users and display their name and link --}}
   {{#each users}}
     <li class="user"><a href="{{link}}">{{name}}</a></li>
   {{/each}}
