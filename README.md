@@ -19,6 +19,18 @@ The current completed transforms are incredibly basic but a step in the right di
 - `{{#unless user.ignoreUser}} {{/unless}}` -> `<c:if test="${!user.ignoreUser}"> </c:if>`
 - `{{#each users}} {{/each}}` -> `<c:forEach var="user" items="${users}"> </c:forEach>`
     + Any `{{ prop }}` within the `{{#each users}}` block will be transformed to `${user.prop}`
+- `{{#with user}} {{/with}}` -> `deleted`
+    + Any `{{ prop }}` within the `{{#with user}}` block will be transformed to `${user.prop}`
+- `{{!-- comment --}}` -> `<%-- comment --%>`
+- `{{! comment }}` -> `<%-- comment --%>`
+
+## To-do
+- Support for complex `if else` blocks being transformed to `<c:choose> <c:when test /> <c:otherwise /> </c:choose>` blocks.
+- Support for `{{else}}` sections within `{{#with}}` blocks.
+- `varStatus` support
+    + `{{@index}}` -> `${varStatus.index}`
+    + `{{@first}}` -> `${varStatus.first}`
+    + `{{@last}}` -> `${varStatus.last}`
 
 ## Adding New Transforms
 Transforms are added by creating a new `file.js` within the `./gulp-utils/statements/` folder with a dev-friendly name, regex expression for matching, and replacing function. The gulp setup will automatically get and use any `.js` files within that directory.
