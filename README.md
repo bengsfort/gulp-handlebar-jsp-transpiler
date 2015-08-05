@@ -1,5 +1,5 @@
-# Gulp [Handlebars -> JSP Transformer](http://tehurn.com/)
-A proof of concept [Handlebars](//handlebarsjs.com) to [JSP](http://www.nooooooooooooooo.com/) Transformer for those that aren't super stoked on the mighty behemoth that is the Wild West of JSP.
+# Gulp [Handlebars -> JSP Transpiler](http://tehurn.com/)
+A proof of concept [Handlebars](//handlebarsjs.com) to [JSP](http://www.nooooooooooooooo.com/) Transpiler for those that aren't super stoked on the mighty behemoth that is the Wild West of JSP.
 
 Obviously compilers/transformers should have their output checked, and this is meant to streamline the development process and give a potential for another front end option that's a little easier on the eyes than JSP (and brain), and give a starting point so JSP development is more along the polishing side.
 
